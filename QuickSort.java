@@ -15,8 +15,6 @@ public class QuickSort {
     }
   }
 	public static void main(String[] args)throws Exception  {
-		  QuickSort app = new QuickSort();
-		 //Generate an integer array of length 7
 	    List<Node> list = new ArrayList<Node>();
       Node a = new Node();
       Node b = new Node();
@@ -44,7 +42,7 @@ public class QuickSort {
   	    System.out.println(list.get(i).Date);
       }
 	    //After sort
-        list=app.quicksort(list);
+        list = quicksort(list);
 
       System.out.println("\n Fechas ordenadas: \n");
       for(int i=0;i<list.size();i++){
@@ -53,7 +51,7 @@ public class QuickSort {
 	}
 
 
-	private List<Node> quicksort(List<Node> list)throws Exception {
+	public static List<Node> quicksort(List<Node> list)throws Exception {
     SimpleDateFormat DateFormat = new SimpleDateFormat("dd.MM.yyyy");
 		if(list.size() <= 1){
 			return list;
@@ -78,7 +76,7 @@ public class QuickSort {
 		return concatenate(quicksort(less), list.get(middle), quicksort(greater));
 	}
 
-	private List<Node> concatenate(List<Node> less, Node pivot, List<Node> greater)throws Exception {
+	public static List<Node> concatenate(List<Node> less, Node pivot, List<Node> greater)throws Exception {
 		List<Node> list = new ArrayList<Node>();
 		for (int i = 0; i < less.size(); i++) {
 			list.add(less.get(i));
